@@ -1,50 +1,41 @@
 const tables = [
     {
-        id: 1,
-        name: "Black Walnut Coffee Table",
+        id: "live-edge-01",
+        name: "Natural Live Edge Burl Table",
         category: "coffee",
-        wood: "Black Walnut",
-        dimensions: '48" × 24" × 18"',
+        collection: "Live Edge Classics",
+        wood: "To be confirmed",
+        dimensions: "To be confirmed",
         price: "Contact for pricing",
         status: "Available",
-        image:
-            "https://placehold.co/900x650/e1d8cb/3b332b" +
-            "?text=Black+Walnut+Coffee+Table"
+        description:
+            "A natural live edge piece featuring dramatic grain, organic edges, and stone-filled details.",
+        image: "images/collections/live-edge.jpg"
     },
     {
-        id: 2,
-        name: "Maple Coffee Table",
+        id: "resin-01",
+        name: "Ocean Resin Table",
         category: "coffee",
-        wood: "Maple",
-        dimensions: '42" × 22" × 18"',
+        collection: "Resin Art",
+        wood: "Mixed hardwood",
+        dimensions: "To be confirmed",
         price: "Contact for pricing",
         status: "Available",
-        image:
-            "https://placehold.co/900x650/d9cfbf/3b332b" +
-            "?text=Maple+Coffee+Table"
+        description:
+            "A coastal-inspired resin piece featuring natural wood, turquoise epoxy, shells, and stone.",
+        image: "images/collections/resin-art.jpg"
     },
     {
-        id: 3,
-        name: "Live Edge Dining Table",
-        category: "dining",
-        wood: "Black Walnut",
-        dimensions: '84" × 38" × 30"',
+        id: "custom-01",
+        name: "Custom CNC Design",
+        category: "custom",
+        collection: "Custom CNC",
+        wood: "To be confirmed",
+        dimensions: "Custom sizing available",
         price: "Contact for pricing",
-        status: "Available",
-        image:
-            "https://placehold.co/900x650/cfc1af/3b332b" +
-            "?text=Live+Edge+Dining+Table"
-    },
-    {
-        id: 4,
-        name: "Maple Dining Table",
-        category: "dining",
-        wood: "Maple",
-        dimensions: '72" × 36" × 30"',
-        price: "Contact for pricing",
-        status: "Sold",
-        image:
-            "https://placehold.co/900x650/bfab92/3b332b" +
-            "?text=Maple+Dining+Table"
+        status: "Commission",
+        description:
+            "A personalized CNC and resin design created around the customer's interests and vision.",
+        image: "images/collections/custom-cnc.jpg"
     }
 ];

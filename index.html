@@ -10,10 +10,10 @@
 
     <meta
         name="description"
-        content="Brake Live Edge creates handcrafted live edge coffee and dining tables."
+        content="Brake Live Edge creates handcrafted live edge furniture, epoxy resin art, and custom CNC pieces in Manitoba."
     >
 
-    <title>Brake Live Edge | Handcrafted Tables</title>
+    <title>Brake Live Edge | Functional Art Crafted from Nature</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -21,36 +21,27 @@
 <body>
     <header class="site-header">
         <nav class="navbar" aria-label="Main navigation">
-            <a class="logo" href="#home">
-                Brake Live Edge
+            <a class="brand" href="#home">
+                <span class="brand-main">BRAKE</span>
+                <span class="brand-sub">LIVE EDGE</span>
             </a>
 
             <button
                 class="menu-button"
                 type="button"
                 aria-label="Open navigation menu"
-                aria-controls="nav-links"
+                aria-controls="navigation"
                 aria-expanded="false"
             >
                 <span aria-hidden="true">☰</span>
             </button>
 
-            <ul class="nav-links" id="nav-links">
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-
-                <li>
-                    <a href="#collection">Collection</a>
-                </li>
-
-                <li>
-                    <a href="#about">About</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
+            <ul class="nav-links" id="navigation">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#gallery">Featured Work</a></li>
+                <li><a href="#custom">Custom Work</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -60,80 +51,153 @@
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-                <p class="hero-eyebrow">
+                <p class="hero-label">
                     Handcrafted in Manitoba
                 </p>
 
                 <h1>
-                    Natural wood.<br>
-                    One-of-a-kind tables.
+                    Functional art.<br>
+                    Crafted from nature.
                 </h1>
 
                 <p class="hero-description">
-                    Live edge coffee and dining tables shaped by hand and
-                    built to preserve the natural character of every slab.
+                    One-of-a-kind live edge furniture, epoxy resin art,
+                    and custom CNC creations shaped by hand.
                 </p>
 
                 <div class="hero-actions">
-                    <a class="primary-button" href="#collection">
-                        Browse the Collection
+                    <a class="button button-gold" href="#gallery">
+                        Explore the Work
                     </a>
 
-                    <a class="secondary-button" href="#about">
-                        Our Story
+                    <a class="button button-outline" href="#custom">
+                        Start a Custom Piece
                     </a>
                 </div>
             </div>
+
+            <a
+                class="scroll-indicator"
+                href="#statement"
+                aria-label="Scroll to continue"
+            >
+                <span>Scroll</span>
+                <span aria-hidden="true">↓</span>
+            </a>
         </section>
 
-        <section class="intro-section">
-            <div class="intro-grid">
-                <div class="intro-heading">
-                    <p class="eyebrow">Made with Character</p>
+        <section class="statement-section" id="statement">
+            <div class="statement-content">
+                <p class="eyebrow">One of One</p>
 
-                    <h2>
-                        Furniture that keeps the story of the tree.
-                    </h2>
-                </div>
-
-                <div class="intro-copy">
-                    <p>
-                        Each Brake Live Edge table begins with a carefully
-                        selected piece of wood. Its grain, knots, shape, and
-                        natural edge guide the final design.
-                    </p>
-
-                    <p>
-                        The result is a durable table that cannot be exactly
-                        recreated.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="collection-section" id="collection">
-            <div class="section-heading">
-                <p class="eyebrow">Our Collection</p>
-
-                <h2>Available Tables</h2>
+                <h2>
+                    No two trees are alike.
+                    Neither are our tables.
+                </h2>
 
                 <p>
-                    Browse handcrafted coffee and dining tables. Select a
-                    category to narrow the collection.
+                    Every Brake Live Edge piece begins with the natural shape,
+                    grain, colour, and character of the wood. Those details are
+                    preserved and transformed into furniture made to stand
+                    apart.
+                </p>
+            </div>
+        </section>
+
+        <section class="collections-section" id="collections">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Explore</p>
+                    <h2>Featured Collections</h2>
+                </div>
+
+                <p>
+                    From timeless hardwood slabs to bold resin and CNC designs,
+                    each collection represents a different side of the craft.
+                </p>
+            </div>
+
+            <div class="collection-grid">
+                <article class="collection-card">
+                    <img
+                        src="images/collections/live-edge.jpg"
+                        alt="Natural live edge wood table"
+                    >
+
+                    <div class="collection-overlay"></div>
+
+                    <div class="collection-content">
+                        <p>Natural Hardwood</p>
+                        <h3>Live Edge Classics</h3>
+                        <a href="#gallery">
+                            View Pieces
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="collection-card">
+                    <img
+                        src="images/collections/resin-art.jpg"
+                        alt="Wood and blue resin art table"
+                    >
+
+                    <div class="collection-overlay"></div>
+
+                    <div class="collection-content">
+                        <p>Wood and Epoxy</p>
+                        <h3>Resin Art</h3>
+                        <a href="#gallery">
+                            View Pieces
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="collection-card">
+                    <img
+                        src="images/collections/custom-cnc.jpg"
+                        alt="Custom CNC design embedded in a wood table"
+                    >
+
+                    <div class="collection-overlay"></div>
+
+                    <div class="collection-content">
+                        <p>Designed for You</p>
+                        <h3>Custom CNC</h3>
+                        <a href="#custom">
+                            Learn More
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+            <div class="section-header gallery-heading">
+                <div>
+                    <p class="eyebrow">The Gallery</p>
+                    <h2>Featured Work</h2>
+                </div>
+
+                <p>
+                    A growing catalogue of handcrafted coffee tables,
+                    dining tables, custom designs, and experimental pieces.
                 </p>
             </div>
 
             <div
                 class="filters"
                 role="group"
-                aria-label="Filter the table collection"
+                aria-label="Filter featured work"
             >
                 <button
                     class="filter-button active"
                     type="button"
                     data-category="all"
                 >
-                    All Tables
+                    All Work
                 </button>
 
                 <button
@@ -151,6 +215,14 @@
                 >
                     Dining Tables
                 </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-category="custom"
+                >
+                    Custom Designs
+                </button>
             </div>
 
             <div
@@ -160,40 +232,85 @@
             ></div>
         </section>
 
-        <section class="about-section" id="about">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <span>Workshop photo coming soon</span>
-                    </div>
+        <section class="values-section">
+            <div class="values-intro">
+                <p class="eyebrow light-eyebrow">Why Brake Live Edge</p>
+
+                <h2>
+                    Made slowly.<br>
+                    Built to remain.
+                </h2>
+            </div>
+
+            <div class="values-grid">
+                <article>
+                    <span>01</span>
+                    <h3>One-of-a-Kind</h3>
+                    <p>
+                        Natural wood ensures that no finished piece can ever
+                        be exactly reproduced.
+                    </p>
+                </article>
+
+                <article>
+                    <span>02</span>
+                    <h3>Made by Hand</h3>
+                    <p>
+                        Each slab is shaped, sanded, finished, and inspected
+                        with careful attention to detail.
+                    </p>
+                </article>
+
+                <article>
+                    <span>03</span>
+                    <h3>Custom CNC Work</h3>
+                    <p>
+                        Logos, symbols, hobbies, teams, and meaningful designs
+                        can be incorporated into custom creations.
+                    </p>
+                </article>
+
+                <article>
+                    <span>04</span>
+                    <h3>Resin Artistry</h3>
+                    <p>
+                        Epoxy, natural objects, colour, and wood are combined
+                        to create visually distinctive surfaces.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="custom-section" id="custom">
+            <div class="custom-grid">
+                <div class="custom-image">
+                    <img
+                        src="images/collections/custom-cnc.jpg"
+                        alt="Custom CNC and epoxy table design"
+                    >
                 </div>
 
-                <div class="about-content">
-                    <p class="eyebrow">About Brake Live Edge</p>
+                <div class="custom-content">
+                    <p class="eyebrow">Custom Commissions</p>
 
-                    <h2>Built by hand. Made to be lived with.</h2>
-
-                    <p>
-                        Brake Live Edge creates handcrafted coffee and dining
-                        tables that celebrate the natural shape and character
-                        of solid wood.
-                    </p>
+                    <h2>Bring your idea to life.</h2>
 
                     <p>
-                        Every slab is individually selected, shaped, sanded,
-                        and finished with close attention to detail. Natural
-                        features are preserved rather than hidden, giving each
-                        piece its own identity.
+                        Brake Live Edge can create pieces inspired by sports,
+                        hobbies, family history, company branding, favourite
+                        places, and personal interests.
                     </p>
 
-                    <p>
-                        Whether placed in a living room or gathered around for
-                        family meals, each table is built to become part of the
-                        home for years to come.
-                    </p>
+                    <ul>
+                        <li>Custom CNC designs</li>
+                        <li>Epoxy colour selection</li>
+                        <li>Live edge slab selection</li>
+                        <li>Coffee and dining table sizing</li>
+                        <li>Personalized artistic details</li>
+                    </ul>
 
                     <a class="text-link" href="#contact">
-                        Ask about a table
+                        Discuss a Custom Piece
                         <span aria-hidden="true">→</span>
                     </a>
                 </div>
@@ -201,20 +318,20 @@
         </section>
 
         <section class="contact-section" id="contact">
-            <div class="contact-card">
-                <div>
-                    <p class="eyebrow light-eyebrow">Get in Touch</p>
+            <div class="contact-content">
+                <p class="eyebrow light-eyebrow">Start a Conversation</p>
 
-                    <h2>Interested in one of our tables?</h2>
+                <h2>
+                    Ready to create something unique?
+                </h2>
 
-                    <p>
-                        Contact Brake Live Edge to ask about availability,
-                        dimensions, pricing, pickup, or custom work.
-                    </p>
-                </div>
+                <p>
+                    Contact Brake Live Edge to ask about an existing piece,
+                    discuss pricing, or begin planning a custom commission.
+                </p>
 
                 <a
-                    class="contact-button"
+                    class="button button-gold"
                     href="mailto:YOUR-EMAIL-HERE"
                 >
                     Send an Inquiry
@@ -224,20 +341,19 @@
     </main>
 
     <footer class="site-footer">
-        <div class="footer-inner">
-            <a class="footer-logo" href="#home">
-                Brake Live Edge
-            </a>
-
-            <p>
-                Handcrafted live edge coffee and dining tables.
-            </p>
-
-            <p class="copyright">
-                &copy; <span id="current-year"></span> Brake Live Edge.
-                All rights reserved.
-            </p>
+        <div class="footer-brand">
+            <span class="brand-main">BRAKE</span>
+            <span class="brand-sub">LIVE EDGE</span>
         </div>
+
+        <p>
+            Functional art handcrafted in Manitoba.
+        </p>
+
+        <p class="copyright">
+            &copy; <span id="current-year"></span> Brake Live Edge.
+            All rights reserved.
+        </p>
     </footer>
 
     <script src="js/tables.js"></script>

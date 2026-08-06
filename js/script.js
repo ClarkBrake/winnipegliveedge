@@ -3,17 +3,17 @@
 const contactEmail = "YOUR-EMAIL-HERE";
 
 const menuButton = document.querySelector(".menu-button");
-const navigationLinks = document.querySelector(".nav-links");
-const tableGallery = document.querySelector("#table-gallery");
+const navigation = document.querySelector(".nav-links");
+const gallery = document.querySelector("#table-gallery");
 const filterButtons = document.querySelectorAll(".filter-button");
 const currentYear = document.querySelector("#current-year");
 
 function setMenuState(isOpen) {
-    if (!menuButton || !navigationLinks) {
+    if (!menuButton || !navigation) {
         return;
     }
 
-    navigationLinks.classList.toggle("open", isOpen);
+    navigation.classList.toggle("open", isOpen);
     document.body.classList.toggle("menu-open", isOpen);
 
     menuButton.setAttribute("aria-expanded", String(isOpen));
@@ -29,78 +29,83 @@ function setMenuState(isOpen) {
         : '<span aria-hidden="true">☰</span>';
 }
 
-if (menuButton && navigationLinks) {
+if (menuButton && navigation) {
     menuButton.addEventListener("click", () => {
-        const isCurrentlyOpen =
-            navigationLinks.classList.contains("open");
-
-        setMenuState(!isCurrentlyOpen);
+        setMenuState(!navigation.classList.contains("open"));
     });
 
-    navigationLinks.querySelectorAll("a").forEach((link) => {
+    navigation.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
             setMenuState(false);
         });
     });
 
     window.addEventListener("resize", () => {
-        if (window.innerWidth > 720) {
+        if (window.innerWidth > 760) {
             setMenuState(false);
         }
     });
 }
 
-function getCategoryLabel(category) {
-    if (category === "coffee") {
-        return "Coffee Table";
-    }
+function getCategoryName(category) {
+    const categories = {
+        coffee: "Coffee Table",
+        dining: "Dining Table",
+        custom: "Custom Design"
+    };
 
-    if (category === "dining") {
-        return "Dining Table";
-    }
-
-    return "Table";
+    return categories[category] || "Handcrafted Piece";
 }
 
 function getStatusClass(status) {
     return status.toLowerCase().replace(/\s+/g, "-");
 }
 
-function createInquiryLink(tableName) {
-    const subject = encodeURIComponent(
-        `Inquiry about ${tableName}`
-    );
-
+function createInquiryLink(name) {
+    const subject = encodeURIComponent(`Inquiry about ${name}`);
     return `mailto:${contactEmail}?subject=${subject}`;
 }
 
 function createTableCard(table) {
-    const categoryLabel = getCategoryLabel(table.category);
-    const statusClass = getStatusClass(table.status);
-    const inquiryLink = createInquiryLink(table.name);
-
     return `
-        <article class="card">
-            <div class="card-image-wrapper">
+        <article class="piece-card">
+            <a
+                class="piece-image"
+                href="table.html?id=${encodeURIComponent(table.id)}"
+                aria-label="View ${table.name}"
+            >
                 <img
                     src="${table.image}"
                     alt="${table.name}"
                     loading="lazy"
                 >
 
-                <span class="status ${statusClass}">
+                <span class="piece-status ${getStatusClass(table.status)}">
                     ${table.status}
                 </span>
-            </div>
+            </a>
 
-            <div class="card-content">
-                <p class="card-category">
-                    ${categoryLabel}
+            <div class="piece-content">
+                <p class="piece-collection">
+                    ${table.collection}
                 </p>
 
-                <h3>${table.name}</h3>
+                <h3>
+                    <a href="table.html?id=${encodeURIComponent(table.id)}">
+                        ${table.name}
+                    </a>
+                </h3>
 
-                <dl class="table-details">
+                <p class="piece-description">
+                    ${table.description}
+                </p>
+
+                <dl class="piece-details">
+                    <div>
+                        <dt>Type</dt>
+                        <dd>${getCategoryName(table.category)}</dd>
+                    </div>
+
                     <div>
                         <dt>Wood</dt>
                         <dd>${table.wood}</dd>
@@ -112,24 +117,21 @@ function createTableCard(table) {
                     </div>
                 </dl>
 
-                <p class="price">
-                    ${table.price}
-                </p>
+                <div class="piece-footer">
+                    <span>${table.price}</span>
 
-                <a
-                    class="card-link"
-                    href="${inquiryLink}"
-                >
-                    Inquire About This Table
-                    <span aria-hidden="true">→</span>
-                </a>
+                    <a href="${createInquiryLink(table.name)}">
+                        Inquire
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
             </div>
         </article>
     `;
 }
 
 function displayTables(category = "all") {
-    if (!tableGallery) {
+    if (!gallery) {
         return;
     }
 
@@ -137,9 +139,9 @@ function displayTables(category = "all") {
         typeof tables === "undefined" ||
         !Array.isArray(tables)
     ) {
-        tableGallery.innerHTML = `
+        gallery.innerHTML = `
             <p class="empty-message">
-                Table information could not be loaded.
+                The collection could not be loaded.
             </p>
         `;
 
@@ -154,28 +156,27 @@ function displayTables(category = "all") {
             );
 
     if (filteredTables.length === 0) {
-        tableGallery.innerHTML = `
+        gallery.innerHTML = `
             <p class="empty-message">
-                No tables are currently listed in this category.
+                No pieces have been added to this category yet.
             </p>
         `;
 
         return;
     }
 
-    tableGallery.innerHTML = filteredTables
+    gallery.innerHTML = filteredTables
         .map(createTableCard)
         .join("");
 }
 
 filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        filterButtons.forEach((filterButton) => {
-            filterButton.classList.remove("active");
+        filterButtons.forEach((item) => {
+            item.classList.remove("active");
         });
 
         button.classList.add("active");
-
         displayTables(button.dataset.category);
     });
 });
